@@ -4,10 +4,10 @@ import ParticipantList from '../components/ParticipantList';
 import ParticipantForm from '../components/ParticipantForm';
 
 const ParticipantsPage = () => {
-    const { data: participants, loading, error } = useFetch('http://localhost:8082/participants');
+    const { data: participants, loading, error } = useFetch('http://localhost:8081/api/v1/participants');
 
     const handleAddParticipant = async (participant) => {
-        await fetch('http://localhost:8082/participants', {
+        await fetch('http://localhost:8081/api/v1/participants', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

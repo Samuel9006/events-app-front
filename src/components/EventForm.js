@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 const EventForm = ({ onSubmit }) => {
-    const [title, setTitle] = useState('');
+    const [eventTitle, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [date, setDate] = useState('');
-    const [location, setLocation] = useState('');
+    const [eventDate, setDate] = useState('');
+    const [eventLocation, setLocation] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({ title, description, date, location });
+        onSubmit({ eventTitle, description, eventDate: eventDate, eventLocation: eventLocation });
         setTitle('');
         setDescription('');
         setDate('');
@@ -21,7 +21,7 @@ const EventForm = ({ onSubmit }) => {
                 <label className="block">Title</label>
                 <input
                     type="text"
-                    value={title}
+                    value={eventTitle}
                     onChange={(e) => setTitle(e.target.value)}
                     className="w-full p-2 border rounded"
                 />
@@ -38,7 +38,7 @@ const EventForm = ({ onSubmit }) => {
                 <label className="block">Date</label>
                 <input
                     type="date"
-                    value={date}
+                    value={eventDate}
                     onChange={(e) => setDate(e.target.value)}
                     className="w-full p-2 border rounded"
                 />
@@ -47,7 +47,7 @@ const EventForm = ({ onSubmit }) => {
                 <label className="block">Location</label>
                 <input
                     type="text"
-                    value={location}
+                    value={eventLocation}
                     onChange={(e) => setLocation(e.target.value)}
                     className="w-full p-2 border rounded"
                 />
